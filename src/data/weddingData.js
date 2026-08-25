@@ -100,6 +100,27 @@ const weddingData = {
       details: "Rohini Nakshatrayuktha • Vrushabha Lagnam",
       venue: "GVR Grand A/C Function Hall, Gudivada"
     }
+  ],
+
+  gallery: [
+    {
+      id: 1,
+      url: "/assets/images/photo-1.jpg",
+      caption: "Nagaraju & Geetha Sai Pravallika",
+      subcaption: "A Heartfelt Moment of Togetherness"
+    },
+    {
+      id: 2,
+      url: "/assets/images/photo-2.jpg",
+      caption: "Two Souls, One Bond",
+      subcaption: "Chi. Nagaraju & Chi. La. Sow. Geetha Sai Pravallika"
+    },
+    {
+      id: 3,
+      url: "/assets/images/photo-3.jpg",
+      caption: "Garlanded in Love",
+      subcaption: "Sacred Auspicious Celebrations"
+    }
   ]
 };
 

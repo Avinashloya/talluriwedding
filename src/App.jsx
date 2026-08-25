@@ -8,6 +8,7 @@ import Events from './components/Events';
 import Countdown from './components/Countdown';
 import AddToCalendar from './components/AddToCalendar';
 import Venue from './components/Venue';
+import Gallery from './components/Gallery';
 import Closing from './components/Closing';
 import MusicControl from './components/MusicControl';
 
@@ -37,6 +38,7 @@ function App() {
         <Countdown />
         <AddToCalendar />
         <Venue />
+        <Gallery />
         <Family />
         <Closing />
         <MusicControl autoPlayTrigger={autoPlayAudio} />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Calendar, MapPin, Users, Heart } from 'lucide-react';
+import { Menu, X, Calendar, MapPin, Users, Heart, Camera } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -19,6 +19,7 @@ const Navbar = () => {
     { name: 'Invitation', href: '#hero', icon: Heart },
     { name: 'Sumuhurtham', href: '#events', icon: Calendar },
     { name: 'Venue', href: '#venue', icon: MapPin },
+    { name: 'Photos', href: '#gallery', icon: Camera },
     { name: 'Family & Hosts', href: '#family', icon: Users },
   ];
 
