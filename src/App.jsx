@@ -6,8 +6,8 @@ import Hero from './components/Hero';
 import Family from './components/Family';
 import Events from './components/Events';
 import Countdown from './components/Countdown';
+import AddToCalendar from './components/AddToCalendar';
 import Venue from './components/Venue';
-import Gallery from './components/Gallery';
 import Closing from './components/Closing';
 import MusicControl from './components/MusicControl';
 
@@ -22,6 +22,7 @@ function App() {
 
   return (
     <div className="app-container">
+      {/* Interactive Unfold Invitation Welcome Screen */}
       <AnimatePresence>
         {!isOpened && (
           <WelcomeScreen onOpen={handleOpenInvitation} />
@@ -32,11 +33,11 @@ function App() {
       <main className="wedding-invitation-main">
         <Navbar />
         <Hero />
-        <Family />
         <Events />
         <Countdown />
+        <AddToCalendar />
         <Venue />
-        <Gallery />
+        <Family />
         <Closing />
         <MusicControl autoPlayTrigger={autoPlayAudio} />
       </main>

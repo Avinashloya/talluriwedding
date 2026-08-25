@@ -14,8 +14,8 @@ const Countdown = () => {
   });
 
   useEffect(() => {
-    // Target: 2026-09-05 at 23:05
-    const targetDate = new Date(`${weddingData.wedding.date}T${weddingData.wedding.time}:00`);
+    // Target: Friday, 04 September 2026 at 9:43 PM (21:43)
+    const targetDate = new Date(`${weddingData.wedding.date}T${weddingData.wedding.time}:00+05:30`);
 
     const calculateTimeLeft = () => {
       const now = new Date();
@@ -50,15 +50,15 @@ const Countdown = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="countdown-header">
-          <Hourglass className="hourglass-icon spin-slow" size={22} />
-          <h2 className="countdown-heading gold-text">Our New Beginning Starts In</h2>
+          <Hourglass className="hourglass-icon spin-slow" size={24} />
+          <h2 className="countdown-heading gold-text">Auspicious Countdown To Sumuhurtham</h2>
         </div>
 
         {timeLeft.isArrived ? (
           <div className="arrived-message">
-            <Heart size={32} fill="#6e1a24" color="#6e1a24" />
-            <h3 className="arrived-text gold-text-bright">Today is the day! 🎉</h3>
-            <p>The auspicious wedding celebrations have begun!</p>
+            <Heart size={36} fill="#d4af37" color="#d4af37" />
+            <h3 className="arrived-text gold-text-bright">Today is the Divine Marriage Day! 🎉</h3>
+            <p>The auspicious wedding celebrations have arrived. We welcome your blessings!</p>
           </div>
         ) : (
           <div className="timer-grid">
@@ -66,7 +66,7 @@ const Countdown = () => {
               <div className="unit-card">
                 <span className="unit-number gold-text">{String(timeLeft.days).padStart(2, '0')}</span>
               </div>
-              <span className="unit-label">DAYS</span>
+              <span className="unit-label font-serif">DAYS</span>
             </div>
 
             <div className="timer-colon">:</div>
@@ -75,7 +75,7 @@ const Countdown = () => {
               <div className="unit-card">
                 <span className="unit-number gold-text">{String(timeLeft.hours).padStart(2, '0')}</span>
               </div>
-              <span className="unit-label">HOURS</span>
+              <span className="unit-label font-serif">HOURS</span>
             </div>
 
             <div className="timer-colon">:</div>
@@ -84,7 +84,7 @@ const Countdown = () => {
               <div className="unit-card">
                 <span className="unit-number gold-text">{String(timeLeft.minutes).padStart(2, '0')}</span>
               </div>
-              <span className="unit-label">MINS</span>
+              <span className="unit-label font-serif">MINS</span>
             </div>
 
             <div className="timer-colon">:</div>
@@ -93,13 +93,13 @@ const Countdown = () => {
               <div className="unit-card">
                 <span className="unit-number gold-text">{String(timeLeft.seconds).padStart(2, '0')}</span>
               </div>
-              <span className="unit-label">SECS</span>
+              <span className="unit-label font-serif">SECS</span>
             </div>
           </div>
         )}
 
         <p className="countdown-footnote font-serif">
-          Saturday, 5th September 2026 • 11:05 PM
+          Friday, 04 September 2026 • 9:43 PM (Rohini Nakshatrayuktha • Vrushabha Lagnam)
         </p>
       </motion.div>
     </section>

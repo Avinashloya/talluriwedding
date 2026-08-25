@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, Sparkles, MapPin } from 'lucide-react';
+import { Calendar, Clock, Sparkles, MapPin, Utensils, Award } from 'lucide-react';
 import weddingData from '../data/weddingData';
 import './Events.css';
 
 const Events = () => {
-  const { wedding, venue, events } = weddingData;
+  const { wedding, dinner, venue } = weddingData;
 
   return (
     <section id="events" className="events-section">
@@ -18,9 +18,9 @@ const Events = () => {
       >
         <div className="section-badge">
           <Calendar size={16} />
-          <span>CELEBRATIONS</span>
+          <span>AUSPICIOUS CEREMONIES</span>
         </div>
-        <h2 className="section-title gold-text">Wedding Events & Schedule</h2>
+        <h2 className="section-title gold-text">Wedding Muhurtham & Dinner</h2>
         <div className="ornament-divider">
           <span className="line"></span>
           <span className="icon font-serif">🪔</span>
@@ -31,7 +31,7 @@ const Events = () => {
       {/* Main Sumuhurtham Card */}
       <motion.div 
         className="sumuhurtham-grand-card"
-        initial={{ opacity: 0, scale: 0.95 }}
+        initial={{ opacity: 0, scale: 0.96 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
@@ -47,75 +47,91 @@ const Events = () => {
           <Sparkles size={16} className="sparkle" />
         </div>
 
-        <h3 className="sumuhurtham-title font-serif">Divine Wedding Ceremony</h3>
+        <h3 className="sumuhurtham-title font-serif">Auspicious Marriage Ceremony</h3>
 
         <div className="time-date-box">
           <div className="date-display">
-            <span className="day-name">SATURDAY</span>
-            <span className="date-number">05</span>
+            <span className="day-name">FRIDAY</span>
+            <span className="date-number">04</span>
             <span className="month-year">SEPTEMBER 2026</span>
           </div>
 
           <div className="time-display">
-            <Clock size={20} className="clock-icon" />
-            <span className="exact-time">11:05 P.M.</span>
+            <Clock size={22} className="clock-icon" />
+            <span className="exact-time">9:43 P.M.</span>
           </div>
         </div>
 
-        {/* Nakshatram & Lagnam Box */}
+        {/* Astrological Details: Rohini Nakshatrayuktha & Vrushabha Lagnam */}
         <div className="astro-details-box">
           <div className="astro-item">
-            <span className="astro-label">NAKSHATRAM</span>
-            <span className="astro-value">{wedding.nakshatram}</span>
+            <Award className="astro-icon" size={18} />
+            <div>
+              <span className="astro-label">NAKSHATRAM</span>
+              <span className="astro-value">{wedding.nakshatram}</span>
+            </div>
           </div>
           <div className="astro-divider"></div>
           <div className="astro-item">
-            <span className="astro-label">LAGNAM</span>
-            <span className="astro-value">{wedding.lagnam}</span>
+            <Sparkles className="astro-icon" size={18} />
+            <div>
+              <span className="astro-label">LAGNAM</span>
+              <span className="astro-value">{wedding.lagnam}</span>
+            </div>
           </div>
         </div>
 
-        <p className="venue-note font-serif">
-          At <strong>{venue.name}</strong>, {venue.city}
-        </p>
+        <div className="ceremony-venue-footer">
+          <MapPin size={18} className="venue-pin-icon" />
+          <p className="venue-note font-serif">
+            Venue: <strong>{venue.name}</strong>, {venue.address}, {venue.city}
+          </p>
+        </div>
       </motion.div>
 
-      {/* Events List Grid (Haldi, Pellikuthuru, Sumuhurtham, Dinner) */}
-      <div className="events-grid">
-        {events.map((evt, idx) => (
-          <motion.div 
-            key={evt.id || idx}
-            className="event-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: idx * 0.15 }}
-          >
-            <div className="event-header-row">
-              <span className="event-icon font-serif">{evt.icon || "✨"}</span>
+      {/* Dinner Gathering Card */}
+      <motion.div 
+        className="dinner-event-card"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <div className="dinner-badge">
+          <Utensils size={18} />
+          <span>CELEBRATORY FEAST</span>
+        </div>
+
+        <div className="dinner-content">
+          <h3 className="dinner-title font-serif">Wedding Dinner</h3>
+          
+          <div className="dinner-details-grid">
+            <div className="dinner-detail-item">
+              <Calendar size={18} className="dinner-icon" />
               <div>
-                <h4 className="event-title font-serif">{evt.name}</h4>
-                <p className="event-subtitle">{evt.details}</p>
+                <span className="detail-label">Date</span>
+                <span className="detail-val">{dinner.displayDate}</span>
               </div>
             </div>
 
-            <div className="event-meta-row">
-              <div className="meta-pill">
-                <Calendar size={14} />
-                <span>{evt.displayDate}</span>
-              </div>
-              <div className="meta-pill">
-                <Clock size={14} />
-                <span>{evt.displayTime}</span>
-              </div>
-              <div className="meta-pill">
-                <MapPin size={14} />
-                <span>{evt.venue || venue.name}</span>
+            <div className="dinner-detail-item">
+              <Clock size={18} className="dinner-icon" />
+              <div>
+                <span className="detail-label">Time</span>
+                <span className="detail-val">{dinner.displayTime}</span>
               </div>
             </div>
-          </motion.div>
-        ))}
-      </div>
+
+            <div className="dinner-detail-item">
+              <MapPin size={18} className="dinner-icon" />
+              <div>
+                <span className="detail-label">Location</span>
+                <span className="detail-val">{dinner.location} ({venue.name})</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 };

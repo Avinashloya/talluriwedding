@@ -1,241 +1,189 @@
 .welcome-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 9999;
-  background-color: #0d0809;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  overflow: hidden;
-}
-
-.invitation-stage-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 1.5rem;
+  background-color: #2b050a;
+  overflow-y: auto;
 }
 
-/* Background Muted Video */
 .welcome-bg-video {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
   z-index: 1;
-  pointer-events: none;
+  filter: brightness(0.4) blur(3px);
 }
 
-@media (min-width: 600px) {
-  .welcome-bg-video {
-    max-width: 520px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-left: 2px solid var(--gold);
-    border-right: 2px solid var(--gold);
-  }
-}
-
-/* Backdrop Mask for legibility */
 .welcome-video-backdrop {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 50% 40%, rgba(30, 8, 12, 0.35) 0%, rgba(15, 3, 5, 0.75) 100%);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  inset: 0;
   z-index: 2;
-  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(65, 10, 19, 0.75) 0%, rgba(20, 3, 6, 0.92) 100%);
 }
 
-/* Merged & Emerged Card Styling */
-.welcome-card-emerged {
+.welcome-card {
   position: relative;
   z-index: 3;
   width: 100%;
-  max-width: 440px;
-  background: rgba(252, 249, 242, 0.92);
+  max-width: 580px;
+  background: rgba(55, 10, 18, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 2px solid var(--gold);
-  border-radius: 12px;
-  padding: 38px 22px;
+  border: 2px solid rgba(212, 175, 55, 0.6);
+  border-radius: 20px;
+  padding: 3rem 2rem 2.5rem;
   text-align: center;
-  box-shadow: 
-    0 0 50px rgba(0, 0, 0, 0.6),
-    0 20px 40px rgba(110, 26, 36, 0.25),
-    inset 0 0 30px rgba(197, 160, 89, 0.25);
-  transform-origin: center center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(212, 175, 55, 0.2);
 }
 
-.welcome-card-merged::before {
-  content: '';
+.welcome-card-corner {
   position: absolute;
-  top: 6px;
-  left: 6px;
-  right: 6px;
-  bottom: 6px;
-  border: 1px dashed rgba(197, 160, 89, 0.6);
+  width: 28px;
+  height: 28px;
+  border-color: #d4af37;
+  border-style: solid;
   pointer-events: none;
 }
 
-.auspicious-emblem {
-  width: 76px;
-  height: 76px;
-  margin: 0 auto 12px auto;
+.welcome-card-corner.top-left {
+  top: 10px;
+  left: 10px;
+  border-width: 3px 0 0 3px;
 }
 
-.journey-tagline {
-  font-size: 1.8rem;
-  color: var(--maroon);
-  margin-bottom: 8px;
-  line-height: 1.2;
+.welcome-card-corner.top-right {
+  top: 10px;
+  right: 10px;
+  border-width: 3px 3px 0 0;
+}
+
+.welcome-card-corner.bottom-left {
+  bottom: 10px;
+  left: 10px;
+  border-width: 0 0 3px 3px;
+}
+
+.welcome-card-corner.bottom-right {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 3px 3px 0;
+}
+
+.auspicious-emblem {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 1.2rem;
 }
 
 .ganesha-svg {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 4px 8px rgba(197, 160, 89, 0.3));
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
 }
 
 .invocation-text {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  color: var(--maroon);
+  color: #f7d070;
+  font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: 1px;
-  margin-bottom: 4px;
+  margin-bottom: 0.2rem;
 }
 
 .sub-invocation {
-  font-family: var(--font-serif);
-  font-size: 0.85rem;
-  color: var(--dark-gold);
+  color: var(--text-muted);
+  font-size: 0.9rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 12px;
 }
 
 .title-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin: 16px 0;
+  gap: 1rem;
+  margin: 1.2rem auto;
+  width: 70%;
 }
 
 .title-divider .line {
+  flex: 1;
   height: 1px;
-  width: 50px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
 }
 
 .sparkle-icon {
-  color: var(--gold);
+  color: #f7d070;
 }
 
 .invitation-tag {
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
+  color: #e6cb85;
+  font-size: 1rem;
   letter-spacing: 3px;
-  color: var(--text-muted);
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem;
 }
 
 .couple-names-wrapper {
-  margin-bottom: 20px;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
 }
 
-.bride-name, .groom-name {
-  font-family: 'Cormorant Garamond', serif !important;
+.prefix-title {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  margin-bottom: 0.2rem;
+}
+
+.groom-name, .bride-name {
+  font-family: var(--font-heading);
   font-size: 2.2rem;
-  font-weight: 600 !important;
-  color: #7A1F3D !important;
-  -webkit-text-fill-color: #7A1F3D !important;
-  line-height: 1.25;
-  letter-spacing: 1.5px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .ampersand-wrapper {
-  margin: 6px 0;
+  margin: 0.4rem 0;
 }
 
 .ampersand {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: 2.2rem;
-  font-weight: 400 !important;
-  font-style: italic;
-  color: #2C221E !important;
-  line-height: 1;
+  font-size: 2.5rem;
+  color: #f7d070;
 }
 
-.wedding-date-teaser {
-  font-family: var(--font-serif);
-  font-size: 0.95rem;
-  color: var(--text-dark);
-  font-weight: 600;
+.welcome-date-preview {
+  color: #d9c5a0;
+  font-size: 1rem;
   letter-spacing: 1px;
-  margin-bottom: 26px;
+  margin: 1rem 0 1.8rem;
 }
 
 .open-invitation-btn {
-  animation: pulseGlow 2.5s infinite ease-in-out;
-  padding: 14px 36px;
-  font-size: 0.95rem;
-}
-
-/* Banana Leaf Entrance Section Styling */
-.banana-leaf-entrance {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 50%, #33691e 100%);
-  color: #ffffff;
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: relative;
-}
-
-.welcome-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.welcome-content p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.welcome-content button {
-  background-color: #8bc34a;
-  border: none;
-  padding: 12px 30px;
-  color: #111;
+  padding: 0.95rem 2.2rem;
   font-size: 1rem;
-  font-weight: bold;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background 0.3s ease;
 }
 
-.welcome-content button:hover {
-  background-color: #7cb342;
+@media (max-width: 600px) {
+  .welcome-card {
+    padding: 2rem 1.25rem 1.8rem;
+  }
+  
+  .groom-name, .bride-name {
+    font-size: 1.7rem;
+  }
+  
+  .invocation-text {
+    font-size: 1.1rem;
+  }
 }

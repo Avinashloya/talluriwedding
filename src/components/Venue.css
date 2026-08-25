@@ -1,13 +1,17 @@
 .venue-section {
-  padding: 50px 16px;
+  position: relative;
 }
 
 .venue-card {
-  background: var(--ivory);
-  border: 2px solid var(--gold);
-  border-radius: 8px;
-  padding: 28px 20px;
-  box-shadow: var(--shadow-card);
+  max-width: 850px;
+  margin: 0 auto;
+  background: var(--bg-maroon-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 2px solid rgba(212, 175, 55, 0.6);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: var(--card-shadow), 0 0 30px rgba(212, 175, 55, 0.1);
   text-align: center;
 }
 
@@ -15,87 +19,106 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
 }
 
 .venue-building-icon {
-  color: var(--maroon);
+  color: var(--gold-light);
 }
 
 .venue-name {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
-  font-weight: 800;
-  letter-spacing: 1.5px;
+  font-size: 2.2rem;
+  font-weight: 700;
 }
 
 .venue-address-details {
-  margin-bottom: 20px;
-}
-
-.venue-complex {
-  font-size: 1.1rem;
-  color: var(--dark-gold);
-  font-weight: 600;
-  margin-bottom: 4px;
+  margin-bottom: 2rem;
 }
 
 .venue-street {
-  font-size: 0.92rem;
-  color: var(--text-dark);
-  margin-bottom: 4px;
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin-bottom: 0.3rem;
 }
 
 .venue-city-state {
-  font-size: 0.95rem;
-  color: var(--maroon);
+  color: var(--text-muted);
+  font-size: 1.05rem;
 }
 
 .map-frame-container {
   width: 100%;
-  height: 220px;
-  border-radius: 8px;
+  height: 320px;
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid var(--gold-border);
-  margin-bottom: 20px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1.5px solid rgba(212, 175, 55, 0.4);
+  margin-bottom: 2rem;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+  background: rgba(30, 4, 8, 0.8);
 }
 
 .venue-map-iframe {
   width: 100%;
   height: 100%;
   border: 0;
+  filter: contrast(1.05) saturate(1.1);
 }
 
 .map-fallback-box {
   width: 100%;
   height: 100%;
-  background: var(--cream);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 1rem;
   cursor: pointer;
-  padding: 20px;
-  text-align: center;
+  padding: 1.5rem;
+  color: var(--gold-light);
 }
 
 .fallback-pin {
-  color: var(--maroon);
+  color: var(--gold-primary);
+  animation: floatSlow 3s ease-in-out infinite;
 }
 
 .fallback-text {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--text-dark);
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: var(--font-heading);
 }
 
 .venue-actions-row {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .venue-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .venue-name {
+    font-size: 1.7rem;
+  }
+
+  .venue-street {
+    font-size: 1.05rem;
+  }
+
+  .map-frame-container {
+    height: 250px;
+  }
+
+  .venue-actions-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .venue-actions-row button {
+    width: 100%;
+  }
 }

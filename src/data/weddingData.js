@@ -1,61 +1,74 @@
 const weddingData = {
+  title: "Bommana's Wedding Invitation",
+  openingText: "We solicit your gracious presence and blessings with family & friends on this auspicious occasion of the marriage of our only son",
+  
   couple: {
-    tagline: "Two Souls, One Beautiful Journey",
-    bride: {
-      title: "Chi. La. Sow.",
-      name: "Keerthi Priya",
-      qualification: "B.Tech."
-    },
+    tagline: "Two Souls, One Sacred Bond • Two Families, Eternal Celebration",
     groom: {
       title: "Chi.",
-      name: "Venkata Ramanaiah",
-      qualification: "B.Tech."
+      name: "Nagaraju",
+      relation: "Only Son",
+      qualification: ""
+    },
+    bride: {
+      title: "Chi. La. Sow.",
+      name: "Geetha Sai Pravallika",
+      relation: "Eldest Daughter",
+      qualification: ""
     }
   },
 
   groomParents: {
-    father: "Sri Thalluri Jamalaiah",
+    father: "Sri Bommana Gumpaswamy",
     mother: "Smt. Ganga",
-    location: "Tiruvuru, N.T.R. District"
+    location: "Gudivada"
   },
 
   brideParents: {
-    father: "Sri Erla Rama Rao",
-    mother: "Smt. Lakshmi",
-    location: "Hanuman Junction"
+    father: "Sri Utla Ganesh Babu",
+    mother: "Smt. Naga Shyamala",
+    location: "Gudivada"
   },
 
   wedding: {
-    date: "2026-09-05",
-    time: "23:05",
-    displayDate: "Saturday, 5th September 2026",
-    displayTime: "11:05 p.m.",
-    nakshatram: "Arudhra Nakshatram",
-    lagnam: "Vrishaba Lagnam"
+    date: "2026-09-04",
+    time: "21:43",
+    displayDate: "Friday, 04 September 2026",
+    displayTime: "9:43 PM",
+    nakshatram: "Rohini Nakshatrayuktha",
+    lagnam: "Vrushabha Lagnam"
   },
 
   dinner: {
-    date: "2026-09-05",
+    date: "2026-09-04",
     time: "19:30",
-    displayDate: "Saturday, 5th September 2026",
-    displayTime: "7:30 p.m. Onwards"
+    displayDate: "Friday, 04 September 2026",
+    displayTime: "7:30 PM",
+    location: "At Marriage Venue"
   },
 
   venue: {
-    name: "R.K. Convention",
-    complex: "Ganapathi Complex",
-    address: "Beside H.P. Petrol Bunk, Eluru Road",
-    city: "Hanuman Junction",
+    name: "GVR Grand A/C Function Hall",
+    address: "Opp. Vikas Rainbow School, Satyanarayanapuram",
+    city: "Gudivada",
     state: "Andhra Pradesh",
     country: "India",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=RK+Convention+Ganapathi+Complex+Hanuman+Junction",
-    embedUrl: "https://maps.google.com/maps?q=16.634621,80.957519&z=15&output=embed"
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=GVR+Grand+AC+Function+Hall+Satyanarayanapuram+Gudivada",
+    embedUrl: "https://maps.google.com/maps?q=16.4418,80.9926&z=15&output=embed"
   },
 
-  whatsapp: {
-    number: "919876543210",
-    message: "Namaste! Warmest congratulations to Keerthi Priya & Venkata Ramanaiah. I am delighted to accept your wedding invitation!"
-  },
+  invitedBy: [
+    { title: "Sri", name: "Bommana Gumpaswamy" },
+    { title: "Smt.", name: "Ganga" }
+  ],
+
+  bestCompliments: [
+    "B. Veerabhadra",
+    "Dhanalakshmi",
+    "B. Sarveshwara Rao",
+    "Sunitha",
+    "Near & Dear"
+  ],
 
   music: {
     enabled: true,
@@ -64,68 +77,28 @@ const weddingData = {
 
   illustration: "/assets/illustrations/wedding-artwork.jpg",
 
-  gallery: [
-    {
-      url: "/assets/images/photo-1.jpg",
-      category: "Moments",
-      caption: "Chi. Keerthi Priya & Chi. Venkata Ramanaiah"
-    },
-    {
-      url: "/assets/images/photo-2.jpg",
-      category: "Ceremony",
-      caption: "Sacred Garlands & Blessings"
-    },
-    {
-      url: "/assets/images/photo-3.jpg",
-      category: "Together",
-      caption: "A Journey of Togetherness & Joy"
-    }
-  ],
-
   events: [
     {
-      id: "haldi",
-      icon: "🌼",
-      name: "Haldi Ceremony",
-      date: "2026-09-03",
-      time: "09:00",
-      displayDate: "Thursday, 3rd September 2026",
-      displayTime: "9:00 a.m.",
-      details: "Auspicious Turmeric Blessing Ceremony",
-      venue: "Our Residence"
-    },
-    {
-      id: "pellikuthuru",
-      icon: "🌸",
-      name: "Pellikuthuru Ceremony",
-      date: "2026-09-03",
-      time: "11:00",
-      displayDate: "Thursday, 3rd September 2026",
-      displayTime: "11:00 a.m.",
-      details: "Traditional Bridal Blessing Ceremony",
-      venue: "Our Residence"
+      id: "dinner",
+      icon: "🍽️",
+      name: "Grand Wedding Dinner",
+      date: "2026-09-04",
+      time: "19:30",
+      displayDate: "Friday, 04 September 2026",
+      displayTime: "7:30 PM Onwards",
+      details: "Feast & Festive Dinner Gathering",
+      venue: "At Marriage Venue (GVR Grand A/C Function Hall)"
     },
     {
       id: "sumuhurtham",
       icon: "🪔",
-      name: "Sumuhurtham (Wedding)",
-      date: "2026-09-05",
-      time: "23:05",
-      displayDate: "Saturday, 5th September 2026",
-      displayTime: "11:05 p.m.",
-      details: "Arudhra Nakshatram & Vrishaba Lagnam",
-      venue: "R.K. Convention, Hanuman Junction"
-    },
-    {
-      id: "dinner",
-      icon: "🍽️",
-      name: "Dinner",
-      date: "2026-09-05",
-      time: "19:30",
-      displayDate: "Saturday, 5th September 2026",
-      displayTime: "7:30 p.m. Onwards",
-      details: "Grand Wedding Dinner Feast",
-      venue: "R.K. Convention, Hanuman Junction"
+      name: "Sumuhurtham (Marriage Ceremony)",
+      date: "2026-09-04",
+      time: "21:43",
+      displayDate: "Friday, 04 September 2026",
+      displayTime: "9:43 PM",
+      details: "Rohini Nakshatrayuktha • Vrushabha Lagnam",
+      venue: "GVR Grand A/C Function Hall, Gudivada"
     }
   ]
 };

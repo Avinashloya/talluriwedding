@@ -1,35 +1,35 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin } from 'lucide-react';
+import { Calendar, Clock, MapPin, Sparkles } from 'lucide-react';
 import weddingData from '../data/weddingData';
 import Thoranam from './Thoranam';
 import './Hero.css';
 
 const Hero = () => {
   const { bride, groom } = weddingData.couple;
-  const { wedding, venue } = weddingData;
+  const { wedding, venue, brideParents, groomParents, openingText, title } = weddingData;
 
   return (
     <section id="hero" className="hero-section">
-      {/* Traditional South Indian Mango Leaf Thoranam Entrance Decoration */}
+      {/* South Indian Mango Leaf Thoranam Header Decoration */}
       <Thoranam />
 
       <motion.div 
         className="invitation-card-container"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1 }}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
         <div className="invitation-card-border">
+          {/* Traditional Corner Ornaments */}
           <div className="corner-decor top-left"></div>
           <div className="corner-decor top-right"></div>
           <div className="corner-decor bottom-left"></div>
           <div className="corner-decor bottom-right"></div>
 
-          {/* Sacred Symbol */}
+          {/* Sacred Invocation Header */}
           <div className="hero-sacred-header">
-            <span className="om-symbol font-serif">॥ శ్రీరామచంద్ర పరబ్రహ్మణే నమః ॥</span>
+            <span className="om-symbol font-telugu">॥ శ్రీరామచంద్ర పరబ్రహ్మణే నమః ॥</span>
           </div>
 
           <div className="ornament-divider">
@@ -38,64 +38,82 @@ const Hero = () => {
             <span className="line"></span>
           </div>
 
-          {/* Invitation Greeting */}
-          <p className="solicit-text">
-            With the divine blessings of Almighty & Our Beloved Ancestors, we cordially solicit your esteemed presence and blessings on the auspicious occasion of the Wedding Ceremony of
+          {/* Main Invitation Title */}
+          <h2 className="hero-invitation-title gold-text-bright font-serif">
+            {title}
+          </h2>
+
+          {/* Opening Solicit Text as requested */}
+          <p className="solicit-text font-serif">
+            "{openingText}"
           </p>
 
-          {/* Bride Details */}
-          <div className="person-block bride-block">
-            <p className="person-title">{bride.title}</p>
-            <h1 className="person-name gold-text">{bride.name}</h1>
-            <p className="person-qual">{bride.qualification}</p>
-          </div>
+          {/* Groom Block */}
+          <motion.div 
+            className="person-block groom-block"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <p className="person-title font-serif">{groom.title}</p>
+            <h1 className="person-name gold-text">{groom.name}</h1>
+            <p className="person-subdetail">
+              ({groom.relation} of {groomParents.father} & {groomParents.mother})
+            </p>
+          </motion.div>
 
-          {/* Grand Wedding Knot Icon */}
+          {/* Grand Sacred Wedding Knot Icon */}
           <div className="wedding-knot">
             <span className="knot-line"></span>
-            <span className="weds-text font-script">weds</span>
+            <div className="weds-badge font-script">
+              <span>weds</span>
+            </div>
             <span className="knot-line"></span>
           </div>
 
-          {/* Groom Details */}
-          <div className="person-block groom-block">
-            <p className="person-title">{groom.title}</p>
-            <h1 className="person-name gold-text">{groom.name}</h1>
-            <p className="person-qual">{groom.qualification}</p>
+          {/* Bride Block */}
+          <motion.div 
+            className="person-block bride-block"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <p className="person-title font-serif">{bride.title}</p>
+            <h1 className="person-name gold-text">{bride.name}</h1>
+            <p className="person-subdetail">
+              ({bride.relation} of {brideParents.mother} & {brideParents.father})
+            </p>
+          </motion.div>
+
+          {/* Decorative Divider */}
+          <div className="ornament-divider hero-lower-divider">
+            <span className="line"></span>
+            <Sparkles className="icon" size={16} />
+            <span className="line"></span>
           </div>
 
-          {/* Wedding Artwork Illustration */}
-          <div className="illustration-wrapper">
-            <img 
-              src={weddingData.illustration} 
-              alt="Keerthi Priya and Venkata Ramanaiah Wedding Illustration" 
-              className="hero-wedding-artwork" 
-            />
-            <div className="artwork-gold-frame"></div>
-          </div>
-
-          {/* Date & Time Highlights */}
+          {/* Key Event Summary Cards */}
           <div className="hero-event-summary">
             <div className="summary-item">
-              <Calendar className="summary-icon" size={18} />
+              <Calendar className="summary-icon" size={20} />
               <div>
-                <span className="summary-label">Date</span>
+                <span className="summary-label font-serif">Date</span>
                 <p className="summary-value">{wedding.displayDate}</p>
               </div>
             </div>
 
             <div className="summary-item">
-              <Clock className="summary-icon" size={18} />
+              <Clock className="summary-icon" size={20} />
               <div>
-                <span className="summary-label">Sumuhurtham Time</span>
+                <span className="summary-label font-serif">Sumuhurtham</span>
                 <p className="summary-value">{wedding.displayTime}</p>
               </div>
             </div>
 
             <div className="summary-item">
-              <MapPin className="summary-icon" size={18} />
+              <MapPin className="summary-icon" size={20} />
               <div>
-                <span className="summary-label">Venue</span>
+                <span className="summary-label font-serif">Venue</span>
                 <p className="summary-value">{venue.name}, {venue.city}</p>
               </div>
             </div>

@@ -1,141 +1,211 @@
 .hero-section {
-  padding: 85px 16px 45px 16px;
+  padding-top: 2rem;
+  padding-bottom: 3.5rem;
   position: relative;
-}
-
-.invitation-card-container {
   width: 100%;
 }
 
-.hero-sacred-header {
+.invitation-card-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.invitation-card-border {
+  position: relative;
+  background: var(--bg-maroon-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(212, 175, 55, 0.7);
+  border-radius: 24px;
+  padding: 3.5rem 2.5rem 3rem;
+  box-shadow: var(--card-shadow), 0 0 40px rgba(212, 175, 55, 0.15);
   text-align: center;
-  margin-bottom: 8px;
+}
+
+/* Corner ornaments */
+.corner-decor {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-color: var(--gold-primary);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.corner-decor.top-left {
+  top: 12px;
+  left: 12px;
+  border-width: 3px 0 0 3px;
+}
+
+.corner-decor.top-right {
+  top: 12px;
+  right: 12px;
+  border-width: 3px 3px 0 0;
+}
+
+.corner-decor.bottom-left {
+  bottom: 12px;
+  left: 12px;
+  border-width: 0 0 3px 3px;
+}
+
+.corner-decor.bottom-right {
+  bottom: 12px;
+  right: 12px;
+  border-width: 0 3px 3px 0;
+}
+
+.hero-sacred-header {
+  margin-bottom: 0.8rem;
 }
 
 .om-symbol {
-  font-size: 0.98rem;
-  color: var(--maroon);
+  color: var(--gold-light);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.hero-invitation-title {
+  font-size: 2.2rem;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
+  margin: 0.5rem 0 1rem;
+  text-transform: uppercase;
 }
 
 .solicit-text {
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-  color: var(--text-dark);
-  text-align: center;
+  color: #f3e5ab;
+  font-size: 1.25rem;
   line-height: 1.7;
-  margin: 18px 0 26px 0;
+  max-width: 700px;
+  margin: 0 auto 2.2rem;
   font-style: italic;
 }
 
 .person-block {
-  text-align: center;
-  margin: 14px 0;
+  margin: 1.2rem 0;
 }
 
 .person-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.95rem;
-  color: var(--dark-gold);
-  letter-spacing: 1.5px;
-  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.2rem;
 }
 
 .person-name {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: 2.2rem;
-  font-weight: 600 !important;
-  color: #7A1F3D !important;
-  -webkit-text-fill-color: #7A1F3D !important;
-  letter-spacing: 1.5px;
-  margin: 4px 0;
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
-.person-qual {
-  font-family: var(--font-label);
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
+.person-subdetail {
+  color: #e6cb85;
+  font-size: 1.05rem;
+  margin-top: 0.3rem;
 }
 
 .wedding-knot {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  margin: 14px 0;
+  gap: 1.5rem;
+  margin: 1.5rem auto;
+  width: 80%;
+  max-width: 400px;
 }
 
 .knot-line {
+  flex: 1;
   height: 1px;
-  width: 65px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
 }
 
-.weds-text {
-  font-size: 2.8rem;
-  color: var(--maroon);
-  line-height: 1;
+.weds-badge {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--gold-primary);
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-bright);
+  font-size: 1.8rem;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
 }
 
-.illustration-wrapper {
-  position: relative;
-  margin: 28px 0;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(110, 26, 36, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
-  border: 2px solid var(--gold);
-}
-
-.hero-wedding-artwork {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.8s ease;
-}
-
-.illustration-wrapper:hover .hero-wedding-artwork {
-  transform: scale(1.03);
+.hero-lower-divider {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .hero-event-summary {
-  background: var(--cream);
-  border: 1px solid var(--gold-border);
-  border-radius: 8px;
-  padding: 18px;
-  margin-top: 26px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  box-shadow: inset 0 0 15px rgba(214, 185, 120, 0.12);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  text-align: left;
 }
 
 .summary-item {
+  background: rgba(45, 7, 13, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.summary-item:hover {
+  border-color: var(--gold-primary);
+  background: rgba(212, 175, 55, 0.1);
+  transform: translateY(-2px);
 }
 
 .summary-icon {
-  color: var(--maroon);
+  color: var(--gold-light);
   flex-shrink: 0;
 }
 
 .summary-label {
-  font-family: var(--font-label);
-  font-size: 0.68rem;
-  letter-spacing: 2px;
+  display: block;
+  font-size: 0.8rem;
   color: var(--text-muted);
   text-transform: uppercase;
-  display: block;
+  letter-spacing: 1px;
 }
 
 .summary-value {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
+  color: #ffffff;
   font-weight: 600;
-  color: var(--text-dark);
+  font-size: 1rem;
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 768px) {
+  .invitation-card-border {
+    padding: 2.5rem 1.25rem 2rem;
+  }
+  
+  .hero-invitation-title {
+    font-size: 1.7rem;
+  }
+
+  .solicit-text {
+    font-size: 1.05rem;
+  }
+
+  .person-name {
+    font-size: 2rem;
+  }
+  
+  .om-symbol {
+    font-size: 0.95rem;
+  }
 }

@@ -1,102 +1,130 @@
 .countdown-section {
-  padding: 40px 16px;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .countdown-card {
-  background: linear-gradient(135deg, #4a1017 0%, #6e1a24 50%, #3d0c12 100%);
-  border: 2px solid var(--gold);
-  border-radius: 12px;
-  padding: 32px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-maroon-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
   text-align: center;
-  color: var(--gold-light);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(197, 160, 89, 0.2);
-  position: relative;
+  box-shadow: var(--card-shadow), 0 0 25px rgba(212, 175, 55, 0.1);
 }
 
 .countdown-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 0.8rem;
+  margin-bottom: 1.8rem;
 }
 
 .hourglass-icon {
-  color: var(--gold);
+  color: var(--gold-light);
 }
 
 .countdown-heading {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
-  letter-spacing: 1.5px;
+  font-size: 1.6rem;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .timer-grid {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 24px;
+  gap: 1rem;
+  margin: 1.5rem 0 1.8rem;
 }
 
 .timer-unit {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .unit-card {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid var(--gold);
-  border-radius: 8px;
-  width: 58px;
-  height: 64px;
+  background: linear-gradient(145deg, rgba(30, 4, 8, 0.8), rgba(65, 12, 20, 0.9));
+  border: 1.5px solid var(--gold-primary);
+  border-radius: 16px;
+  width: 90px;
+  height: 95px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .unit-number {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
-  font-weight: 900;
-  line-height: 1;
+  font-size: 2.6rem;
+  font-weight: 800;
 }
 
 .unit-label {
-  font-family: var(--font-heading);
-  font-size: 0.62rem;
-  letter-spacing: 1.5px;
-  color: var(--gold-light);
-  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
 }
 
 .timer-colon {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
-  color: var(--gold);
-  font-weight: 700;
-  margin-top: -16px;
+  font-size: 2.2rem;
+  color: var(--gold-light);
+  margin-top: -1.5rem;
+  animation: pulseGold 2s infinite;
 }
 
 .arrived-message {
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 20px 0;
+  gap: 0.8rem;
 }
 
 .arrived-text {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 .countdown-footnote {
-  font-size: 0.85rem;
-  color: var(--gold-light);
+  color: #e6cb85;
+  font-size: 1.05rem;
   letter-spacing: 1px;
-  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .countdown-card {
+    padding: 1.8rem 1rem;
+  }
+
+  .countdown-heading {
+    font-size: 1.25rem;
+  }
+
+  .timer-grid {
+    gap: 0.4rem;
+  }
+
+  .unit-card {
+    width: 65px;
+    height: 70px;
+    border-radius: 12px;
+  }
+
+  .unit-number {
+    font-size: 1.8rem;
+  }
+
+  .timer-colon {
+    font-size: 1.5rem;
+    margin-top: -1.2rem;
+  }
 }

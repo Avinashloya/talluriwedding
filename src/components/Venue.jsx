@@ -14,7 +14,7 @@ const Venue = () => {
     }
   };
 
-  const mapEmbedSrc = venue.embedUrl || "https://maps.google.com/maps?q=16.634621,80.957519&z=15&output=embed";
+  const mapEmbedSrc = venue.embedUrl || "https://maps.google.com/maps?q=16.4418,80.9926&z=15&output=embed";
 
   return (
     <section id="venue" className="venue-section">
@@ -27,9 +27,9 @@ const Venue = () => {
       >
         <div className="section-badge">
           <MapPin size={16} />
-          <span>LOCATION</span>
+          <span>MARRIAGE VENUE</span>
         </div>
-        <h2 className="section-title gold-text">Wedding Venue</h2>
+        <h2 className="section-title gold-text">Wedding Location</h2>
         <div className="ornament-divider">
           <span className="line"></span>
           <span className="icon font-serif">🏰</span>
@@ -45,23 +45,22 @@ const Venue = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="venue-header-decor">
-          <Building2 className="venue-building-icon" size={28} />
-          <h3 className="venue-name gold-text">{venue.name}</h3>
+          <Building2 className="venue-building-icon" size={32} />
+          <h3 className="venue-name gold-text font-serif">{venue.name}</h3>
         </div>
 
         <div className="venue-address-details">
-          <p className="venue-complex font-serif">{venue.complex}</p>
-          <p className="venue-street">{venue.address}</p>
+          <p className="venue-street font-serif">{venue.address}</p>
           <p className="venue-city-state">
             <strong>{venue.city}</strong>, {venue.state}, {venue.country}
           </p>
         </div>
 
-        {/* Embedded Interactive Map */}
+        {/* Embedded Google Map */}
         <div className="map-frame-container">
           {!iframeError ? (
             <iframe 
-              title="Wedding Venue Map"
+              title="Wedding Venue Map - GVR Grand Gudivada"
               src={mapEmbedSrc}
               className="venue-map-iframe"
               loading="lazy"
@@ -70,26 +69,24 @@ const Venue = () => {
             ></iframe>
           ) : (
             <div className="map-fallback-box" onClick={handleOpenMap}>
-              <MapPin size={32} className="fallback-pin" />
-              <p className="fallback-text">Tap to view Google Map for R.K. Convention</p>
+              <MapPin size={36} className="fallback-pin" />
+              <p className="fallback-text">Tap to open Google Maps for GVR Grand A/C Function Hall</p>
             </div>
           )}
         </div>
 
         {/* Action Buttons */}
-        {venue.mapUrl && (
-          <div className="venue-actions-row">
-            <button className="btn-gold" onClick={handleOpenMap}>
-              <Navigation size={16} />
-              <span>Get Directions</span>
-            </button>
+        <div className="venue-actions-row">
+          <button className="btn-gold" onClick={handleOpenMap}>
+            <Navigation size={18} />
+            <span>View Location (Google Maps)</span>
+          </button>
 
-            <button className="btn-outline-gold" onClick={handleOpenMap}>
-              <ExternalLink size={16} />
-              <span>View on Map</span>
-            </button>
-          </div>
-        )}
+          <button className="btn-outline-gold" onClick={handleOpenMap}>
+            <ExternalLink size={18} />
+            <span>Get Directions</span>
+          </button>
+        </div>
       </motion.div>
     </section>
   );
