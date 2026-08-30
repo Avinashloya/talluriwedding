@@ -169,9 +169,145 @@
   margin: 1rem 0 1.8rem;
 }
 
+.open-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
 .open-invitation-btn {
   padding: 0.95rem 2.2rem;
   font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.timer-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff2a8;
+  letter-spacing: 0.5px;
+}
+
+.timer-subtext-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: #d9c5a0;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.timer-countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.timer-ring-wrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-progress-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.4));
+}
+
+.timer-bg-circle {
+  fill: none;
+  stroke: rgba(212, 175, 55, 0.15);
+  stroke-width: 6;
+}
+
+.timer-fill-circle {
+  fill: none;
+  stroke: #d4af37;
+  stroke-width: 6;
+  stroke-dasharray: 326.72;
+  stroke-linecap: round;
+}
+
+.timer-number-display {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.countdown-number-gold {
+  font-family: var(--font-heading, serif);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #f7d070;
+  text-shadow: 0 0 15px rgba(247, 208, 112, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sparkle-gold-spin {
+  color: #f7d070;
+  animation: spinSparkle 2s linear infinite;
+}
+
+@keyframes spinSparkle {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.timer-status-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff2a8;
+  letter-spacing: 0.5px;
+}
+
+.btn-skip-timer {
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  color: #e6cb85;
+  padding: 0.45rem 1.1rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.25s ease;
+}
+
+.btn-skip-timer:hover {
+  background: rgba(212, 175, 55, 0.15);
+  color: #fff;
+  border-color: #d4af37;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 600px) {
