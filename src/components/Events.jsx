@@ -51,18 +51,18 @@ const Events = () => {
 
         <div className="time-date-box">
           <div className="date-display">
-            <span className="day-name">FRIDAY</span>
-            <span className="date-number">04</span>
+            <span className="day-name">SATURDAY</span>
+            <span className="date-number">05</span>
             <span className="month-year">SEPTEMBER 2026</span>
           </div>
 
           <div className="time-display">
             <Clock size={22} className="clock-icon" />
-            <span className="exact-time">9:43 P.M.</span>
+            <span className="exact-time">{wedding.displayTime || "11:05 P.M."}</span>
           </div>
         </div>
 
-        {/* Astrological Details: Rohini Nakshatrayuktha & Vrushabha Lagnam */}
+        {/* Astrological Details: Arudhra Nakshatrayuktha & Vrishaba Lagnam */}
         <div className="astro-details-box">
           <div className="astro-item">
             <Award className="astro-icon" size={18} />
@@ -84,7 +84,7 @@ const Events = () => {
         <div className="ceremony-venue-footer">
           <MapPin size={18} className="venue-pin-icon" />
           <p className="venue-note font-serif">
-            Venue: <strong>{venue.name}</strong>, {venue.address}, {venue.city}
+            Venue: <strong>{venue.name}</strong> ({venue.complex}), {venue.address}, {venue.city}
           </p>
         </div>
       </motion.div>

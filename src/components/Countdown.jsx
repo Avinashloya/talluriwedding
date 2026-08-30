@@ -99,7 +99,7 @@ const Countdown = () => {
         )}
 
         <p className="countdown-footnote font-serif">
-          Friday, 04 September 2026 • 9:43 PM (Rohini Nakshatrayuktha • Vrushabha Lagnam)
+          {weddingData.wedding.displayDate} • {weddingData.wedding.displayTime} ({weddingData.wedding.nakshatram} • {weddingData.wedding.lagnam})
         </p>
       </motion.div>
     </section>

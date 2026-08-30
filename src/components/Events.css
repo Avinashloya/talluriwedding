@@ -269,3 +269,74 @@
     padding: 1.5rem 1.25rem;
   }
 }
+
+/* Pre-wedding Events Grid */
+.pre-wedding-events-container {
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.sub-events-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.events-sub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.2rem;
+}
+
+.sub-event-card {
+  background: rgba(35, 5, 12, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 14px;
+  padding: 1.2rem;
+  text-align: left;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.sub-event-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-bright);
+}
+
+.sub-event-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.sub-event-icon {
+  font-size: 1.4rem;
+}
+
+.sub-event-name {
+  color: var(--gold-bright);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sub-event-body p {
+  margin: 0.25rem 0;
+  font-size: 0.88rem;
+  color: var(--cream-text);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sub-event-details {
+  color: var(--text-muted) !important;
+  font-style: italic;
+  margin-top: 0.4rem !important;
+}
+
+.sub-event-venue {
+  color: var(--gold-light) !important;
+  font-weight: 600;
+}

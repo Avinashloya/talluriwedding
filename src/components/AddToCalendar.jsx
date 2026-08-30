@@ -5,20 +5,20 @@ import './AddToCalendar.css';
 
 const AddToCalendar = () => {
   const [copied, setCopied] = useState(false);
+  const { groom, bride } = weddingData.couple;
+  const { wedding, venue, invitedBy } = weddingData;
 
-  const eventTitle = "Wedding: Chi. Nagaraju & Chi. La. Sow. Geetha Sai Pravallika";
-  const eventDetails = `We solicit your gracious presence on the wedding of Chi. Nagaraju with Chi. La. Sow. Geetha Sai Pravallika. 
-Sumuhurtham: 9:43 PM (Rohini Nakshatrayuktha • Vrushabha Lagnam). 
-Dinner: 7:30 PM onwards. 
-Invited By: Sri Bommana Gumpaswamy & Smt. Ganga.`;
-  const eventLocation = `${weddingData.venue.name}, ${weddingData.venue.address}, ${weddingData.venue.city}, ${weddingData.venue.state}`;
+  const eventTitle = `Wedding: ${groom.title} ${groom.name} & ${bride.title} ${bride.name}`;
+  const eventDetails = `We solicit your gracious presence on the wedding of ${groom.title} ${groom.name} with ${bride.title} ${bride.name}. 
+Sumuhurtham: ${wedding.displayTime} (${wedding.nakshatram} • ${wedding.lagnam}). 
+Dinner: ${weddingData.dinner.displayTime}. 
+Invited By: ${invitedBy.map(h => `${h.title} ${h.name}`).join(' & ')}.`;
+  const eventLocation = `${venue.name}, ${venue.address}, ${venue.city}, ${venue.state}`;
 
-  // Google Calendar URL Generator
+  // Google Calendar URL Generator (September 05, 2026)
   const getGoogleCalendarUrl = () => {
-    // 04 September 2026 19:30 IST -> 20260904T140000Z (UTC: -5:30)
-    // 05 September 2026 01:00 IST -> 20260904T193000Z
-    const startTime = "20260904T140000Z"; 
-    const endTime = "20260904T193000Z";
+    const startTime = "20260905T140000Z"; 
+    const endTime = "20260905T193000Z";
 
     const url = new URL("https://calendar.google.com/calendar/render");
     url.searchParams.append("action", "TEMPLATE");
@@ -34,15 +34,15 @@ Invited By: Sri Bommana Gumpaswamy & Smt. Ganga.`;
   const downloadIcsFile = () => {
     const icsData = `BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Bommana Wedding Invitation//EN
+PRODID:-//Talluri Wedding Invitation//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 SUMMARY:${eventTitle}
 DESCRIPTION:${eventDetails.replace(/\n/g, '\\n')}
 LOCATION:${eventLocation}
-DTSTART:20260904T140000Z
-DTEND:20260904T193000Z
+DTSTART:20260905T140000Z
+DTEND:20260905T193000Z
 STATUS:CONFIRMED
 SEQUENCE:0
 END:VEVENT
@@ -51,7 +51,7 @@ END:VCALENDAR`;
     const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(blob);
-    link.setAttribute('download', 'Nagaraju_Geetha_Wedding.ics');
+    link.setAttribute('download', `${groom.name}_${bride.name}_Wedding.ics`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

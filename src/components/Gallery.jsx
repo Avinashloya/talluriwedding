@@ -6,7 +6,7 @@ import './Gallery.css';
 
 const Gallery = () => {
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const { gallery = [] } = weddingData;
+  const { gallery = [], couple: { groom, bride } } = weddingData;
 
   const handlePrev = useCallback((e) => {
     if (e) e.stopPropagation();
@@ -47,7 +47,7 @@ const Gallery = () => {
         </div>
         <h2 className="section-title gold-text font-serif">Photo Gallery</h2>
         <p className="gallery-subtitle font-serif">
-          Chi. Nagaraju & Chi. La. Sow. Geetha Sai Pravallika
+          {groom.title} {groom.name} & {bride.title} {bride.name}
         </p>
         <div className="ornament-divider">
           <span className="line"></span>
@@ -70,7 +70,7 @@ const Gallery = () => {
             <div className="gallery-image-wrapper">
               <img 
                 src={item.url} 
-                alt={item.caption || `Nagaraju & Geetha Sai Pravallika photo ${index + 1}`} 
+                alt={item.caption || `${groom.name} & ${bride.name} photo ${index + 1}`} 
                 className="gallery-image"
                 loading="lazy"
               />

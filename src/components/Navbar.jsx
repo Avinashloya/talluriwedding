@@ -27,9 +27,9 @@ const Navbar = () => {
     <nav className={`navbar-header ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-content">
         <a href="#hero" className="nav-brand font-serif">
-          <span className="brand-icon font-script">N</span>
+          <span className="brand-icon font-script">V</span>
           <span className="brand-amp font-script">&</span>
-          <span className="brand-icon font-script">P</span>
+          <span className="brand-icon font-script">K</span>
         </a>
 
         {/* Desktop Links */}

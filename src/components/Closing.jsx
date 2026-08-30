@@ -61,7 +61,7 @@ const Closing = () => {
           </button>
 
           <p className="copyright-notice">
-            Designed with devotion & joy for Bommana's Wedding Invitation
+            Designed with devotion & joy for Talluri's Wedding Invitation
           </p>
         </div>
       </motion.div>
